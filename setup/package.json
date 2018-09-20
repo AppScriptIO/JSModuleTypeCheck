@@ -5,7 +5,8 @@
         "@dependency/appDeploymentLifecycle": "https://github.com/AppScriptIO/appDeploymentLifecycle",
         "@dependency/appDeploymentManager": "https://github.com/AppScriptIO/appDeploymentManager",
         "@dependency/hostCLIAdapter": "https://github.com/AppScriptIO/hostCLIAdapter",
-        "@dependency/javascriptTestRunner": "https://github.com/AppScriptIO/javascriptTestRunner"
+        "@dependency/javascriptTestRunner": "https://github.com/AppScriptIO/javascriptTestRunner",
+        "@script/localHostMachineScript": "https://github.com/AppScriptIO/hostCLIAdapter"
     },
     "main": "./entrypoint.js"
 }
