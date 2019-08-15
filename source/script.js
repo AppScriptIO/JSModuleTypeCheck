@@ -1,20 +1,21 @@
-import filesystem from 'fs'
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.IsFileOrFolderJSModule = IsFileOrFolderJSModule;var _fs = _interopRequireDefault(require("fs"));
 
-/**
- *  Check if javascript module is a module file or directory module.
- * @return String || Boolean
- */
-export function IsFileOrFolderJSModule({
-  modulePath, // path to js module
-  isType = false, // 'file' || 'directory' - allows to return boolean in case set, respective to the type set.
-}) {
-  let moduleType
-  if (filesystem.existsSync(modulePath) && filesystem.lstatSync(modulePath).isDirectory()) moduleType = 'directory'
-  else if (filesystem.existsSync(`${modulePath}.js`) || (filesystem.existsSync(modulePath) && filesystem.lstatSync(modulePath).isFile())) moduleType = 'file'
-  else throw new Error(`Module ${modulePath} does not exist`)
 
-  // return boolean respective to the type in question.
-  if (isType) return isType === moduleType
 
-  return moduleType
+
+
+function IsFileOrFolderJSModule({
+  modulePath,
+  isType = false })
+{
+  let moduleType;
+  if (_fs.default.existsSync(modulePath) && _fs.default.lstatSync(modulePath).isDirectory()) moduleType = 'directory';else
+  if (_fs.default.existsSync(`${modulePath}.js`) || _fs.default.existsSync(modulePath) && _fs.default.lstatSync(modulePath).isFile()) moduleType = 'file';else
+  throw new Error(`Module ${modulePath} does not exist`);
+
+
+  if (isType) return isType === moduleType;
+
+  return moduleType;
 }
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NvdXJjZS9zY3JpcHQuanMiXSwibmFtZXMiOlsiSXNGaWxlT3JGb2xkZXJKU01vZHVsZSIsIm1vZHVsZVBhdGgiLCJpc1R5cGUiLCJtb2R1bGVUeXBlIiwiZmlsZXN5c3RlbSIsImV4aXN0c1N5bmMiLCJsc3RhdFN5bmMiLCJpc0RpcmVjdG9yeSIsImlzRmlsZSIsIkVycm9yIl0sIm1hcHBpbmdzIjoid05BQUE7Ozs7OztBQU1PLFNBQVNBLHNCQUFULENBQWdDO0FBQ3JDQyxFQUFBQSxVQURxQztBQUVyQ0MsRUFBQUEsTUFBTSxHQUFHLEtBRjRCLEVBQWhDO0FBR0o7QUFDRCxNQUFJQyxVQUFKO0FBQ0EsTUFBSUMsWUFBV0MsVUFBWCxDQUFzQkosVUFBdEIsS0FBcUNHLFlBQVdFLFNBQVgsQ0FBcUJMLFVBQXJCLEVBQWlDTSxXQUFqQyxFQUF6QyxFQUF5RkosVUFBVSxHQUFHLFdBQWIsQ0FBekY7QUFDSyxNQUFJQyxZQUFXQyxVQUFYLENBQXVCLEdBQUVKLFVBQVcsS0FBcEMsS0FBOENHLFlBQVdDLFVBQVgsQ0FBc0JKLFVBQXRCLEtBQXFDRyxZQUFXRSxTQUFYLENBQXFCTCxVQUFyQixFQUFpQ08sTUFBakMsRUFBdkYsRUFBbUlMLFVBQVUsR0FBRyxNQUFiLENBQW5JO0FBQ0EsUUFBTSxJQUFJTSxLQUFKLENBQVcsVUFBU1IsVUFBVyxpQkFBL0IsQ0FBTjs7O0FBR0wsTUFBSUMsTUFBSixFQUFZLE9BQU9BLE1BQU0sS0FBS0MsVUFBbEI7O0FBRVosU0FBT0EsVUFBUDtBQUNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGZpbGVzeXN0ZW0gZnJvbSAnZnMnXHJcblxyXG4vKipcclxuICogIENoZWNrIGlmIGphdmFzY3JpcHQgbW9kdWxlIGlzIGEgbW9kdWxlIGZpbGUgb3IgZGlyZWN0b3J5IG1vZHVsZS5cclxuICogQHJldHVybiBTdHJpbmcgfHwgQm9vbGVhblxyXG4gKi9cclxuZXhwb3J0IGZ1bmN0aW9uIElzRmlsZU9yRm9sZGVySlNNb2R1bGUoe1xyXG4gIG1vZHVsZVBhdGgsIC8vIHBhdGggdG8ganMgbW9kdWxlXHJcbiAgaXNUeXBlID0gZmFsc2UsIC8vICdmaWxlJyB8fCAnZGlyZWN0b3J5JyAtIGFsbG93cyB0byByZXR1cm4gYm9vbGVhbiBpbiBjYXNlIHNldCwgcmVzcGVjdGl2ZSB0byB0aGUgdHlwZSBzZXQuXHJcbn0pIHtcclxuICBsZXQgbW9kdWxlVHlwZVxyXG4gIGlmIChmaWxlc3lzdGVtLmV4aXN0c1N5bmMobW9kdWxlUGF0aCkgJiYgZmlsZXN5c3RlbS5sc3RhdFN5bmMobW9kdWxlUGF0aCkuaXNEaXJlY3RvcnkoKSkgbW9kdWxlVHlwZSA9ICdkaXJlY3RvcnknXHJcbiAgZWxzZSBpZiAoZmlsZXN5c3RlbS5leGlzdHNTeW5jKGAke21vZHVsZVBhdGh9LmpzYCkgfHwgKGZpbGVzeXN0ZW0uZXhpc3RzU3luYyhtb2R1bGVQYXRoKSAmJiBmaWxlc3lzdGVtLmxzdGF0U3luYyhtb2R1bGVQYXRoKS5pc0ZpbGUoKSkpIG1vZHVsZVR5cGUgPSAnZmlsZSdcclxuICBlbHNlIHRocm93IG5ldyBFcnJvcihgTW9kdWxlICR7bW9kdWxlUGF0aH0gZG9lcyBub3QgZXhpc3RgKVxyXG5cclxuICAvLyByZXR1cm4gYm9vbGVhbiByZXNwZWN0aXZlIHRvIHRoZSB0eXBlIGluIHF1ZXN0aW9uLlxyXG4gIGlmIChpc1R5cGUpIHJldHVybiBpc1R5cGUgPT09IG1vZHVsZVR5cGVcclxuXHJcbiAgcmV0dXJuIG1vZHVsZVR5cGVcclxufVxyXG4iXX0=
